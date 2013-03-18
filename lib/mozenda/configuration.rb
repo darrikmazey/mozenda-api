@@ -3,7 +3,11 @@ module Mozenda
 	class Configuration
 		@@instance = nil
 		@@required_options = [ :web_service_key ]
-		@@optional_options = []
+		@@optional_options = [ :base_uri ]
+
+		@@default_options = {
+			:base_uri => "https://api.mozenda.com/rest"
+		}
 
 		(@@required_options + @@optional_options).each do |option|
 			define_method("#{option}=".to_sym) do |option_value|
@@ -22,7 +26,7 @@ module Mozenda
 		end
 
 		def initialize
-			@options = Hash.new
+			@options = @@default_options.dup
 		end
 
 		def options
