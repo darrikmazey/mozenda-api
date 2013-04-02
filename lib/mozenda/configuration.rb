@@ -3,10 +3,11 @@ module Mozenda
 	class Configuration
 		@@instance = nil
 		@@required_options = [ :web_service_key ]
-		@@optional_options = [ :base_uri ]
+		@@optional_options = [ :base_uri, :service ]
 
 		@@default_options = {
-			:base_uri => "https://api.mozenda.com/rest"
+			:base_uri => "https://api.mozenda.com/rest",
+			:service => 'Mozenda10',
 		}
 
 		(@@required_options + @@optional_options).each do |option|
