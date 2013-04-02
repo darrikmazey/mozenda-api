@@ -62,7 +62,7 @@ module Mozenda
 			begin
 				klass = "Mozenda::#{@response_hash.keys.first}".constantize
 			rescue NameError => e
-				klass = nil
+				raise ResponseTypeException.new("missing Response type: Mozenda::#{@response_hash.keys.first}")
 			end
 			if klass
 				return klass.new(@response_hash)

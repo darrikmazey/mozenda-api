@@ -8,5 +8,9 @@ module Mozenda
 
 	class InvalidRequestException < Exception
 	end
+
+	class ResponseTypeException < Exception
+	end
+
 end
 
