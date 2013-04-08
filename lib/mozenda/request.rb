@@ -32,7 +32,10 @@ module Mozenda
 			end
 
 			unless sent?
+				delay = Mozenda::RateLimit.delay
+				sleep(delay) if delay > 0
 				@response_xml = open(full_uri).read
+				Mozenda::RateLimit << self
 				@sent = true
 				@response_object = generate_response
 			end

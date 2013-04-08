@@ -1,12 +1,13 @@
-require "mozenda/version"
-require "mozenda/exception"
-require "mozenda/configuration"
-require "mozenda/request"
-require "mozenda/requests"
-require "mozenda/response"
-require "mozenda/responses"
-require "mozenda/model"
-require "mozenda/models"
+require 'mozenda/version'
+require 'mozenda/exception'
+require 'mozenda/configuration'
+require 'mozenda/request'
+require 'mozenda/requests'
+require 'mozenda/response'
+require 'mozenda/responses'
+require 'mozenda/model'
+require 'mozenda/models'
+require 'mozenda/rate_limit'
 
 module Mozenda
 	# Your code goes here...
