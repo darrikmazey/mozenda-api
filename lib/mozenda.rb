@@ -23,4 +23,15 @@ module Mozenda
 		response.collections
 	end
 
+	def self.agents
+		request = Mozenda::AgentGetListRequest.new
+		response = request.send!
+		response.agents
+	end
+
+	def self.views_for_collection(collection_id)
+		request = Mozenda::CollectionGetViewsRequest.new(collection_id)
+		response = request.send!
+		response.views
+	end
 end
