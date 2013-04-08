@@ -9,6 +9,13 @@ module Mozenda
 			@views = view_res.views
 		end
 
+		def fields
+			return @fields if @fields
+			field_req = Mozenda::CollectionGetFieldsRequest.new(self)
+			field_res = field_req.send!
+			@fields = field_res.fields
+		end
+
 		private
 
 		def class_name
