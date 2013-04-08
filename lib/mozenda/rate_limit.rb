@@ -40,6 +40,9 @@ module Mozenda
 		end
 
 		def delay
+			if @ary.count < 5 || (Time.now - @ary.first) < 6
+				return 0
+			end
 			delay = self.current_rate / Mozenda.configuration.rate_limit - 0.9
 			real_delay = [0, delay].max * 20
 			real_delay.round(2)
