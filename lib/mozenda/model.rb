@@ -21,6 +21,10 @@ module Mozenda
 			end
 		end
 
+		def data
+			@data
+		end
+
 		private
 
 		def class_name
