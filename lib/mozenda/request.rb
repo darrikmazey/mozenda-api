@@ -33,7 +33,9 @@ module Mozenda
 
 			unless sent?
 				delay = Mozenda::RateLimit.delay
-				STDERR.puts "delay: #{delay}"
+				File.open('/tmp/delay.log', 'a') do |f|
+					f.puts "delay: #{delay}"
+				end
 				sleep(delay) if delay > 0
 				@response_xml = open(full_uri).read
 				Mozenda::RateLimit << self
