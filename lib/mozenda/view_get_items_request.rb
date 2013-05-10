@@ -16,7 +16,7 @@ module Mozenda
 		end
 
 		def optional_params
-			[ :PageItemCount ]
+			[ :PageItemCount, :PageNumber ]
 		end
 
 	end

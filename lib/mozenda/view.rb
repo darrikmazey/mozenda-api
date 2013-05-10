@@ -8,7 +8,7 @@ module Mozenda
 			page_num = 0
 			page_count = 1
 			while (page_num != page_count)
-				item_req = Mozenda::ViewGetItemsRequest.new(self)
+				item_req = Mozenda::ViewGetItemsRequest.new(self, :PageNumber => (page_num + 1))
 				item_res = item_req.send!
 				page_num = item_res.page_number
 				page_count = item_res.page_count
